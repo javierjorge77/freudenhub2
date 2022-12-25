@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'tools/new'
 
+  devise_for :users
   devise_scope :user do
     authenticated :user do
       root 'pages#home', as: :authenticated_root
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
+
+  resources :tools, only: [:create,:edit, :index, :destroy]
 
 end

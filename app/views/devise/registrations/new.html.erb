@@ -5,9 +5,13 @@
 
   <div class="flex-container">
     <div class="form-inputs" style="margin: 50px; margin-top: 0;">
-    <%= f.input :fullname,
+    <%= f.input :name,
                 required: true,
-                hint: "Name(s) and Lastname(s)"%>
+                hint: "Name(s)"%>
+
+    <%= f.input :lastname,
+                required: true,
+                hint: "Lastname(s)"%>
 
     <%= f.input :plant,
                 collection: [ "Cuautla","UK", "Spain", "India"],

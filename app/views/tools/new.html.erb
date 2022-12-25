@@ -1,0 +1,25 @@
+<h1>New Tool</h1>
+
+<div class="flex-container">
+  <div class="form-inputs" style="margin: 50px; margin-top: 0;">
+    <%= simple_form_for(@tool) do |f| %>
+    <%= f.input :alias %>
+    <%= f.input :sap %>
+    <%= f.input :layout %>
+    <%= f.input :plant, collection: [ "Cuautla","UK", "Spain", "India"]%>
+    <%= f.input :bu %>
+  </div>
+  <div class="form-inputs" style="margin: 50px; margin-top: 0;">
+    <%= f.input :technology %>
+    <%= f.input :customer %>
+    <%= f.input :volume %>
+    <%= f.input :max %>
+    <%= f.input :damaged %>
+  </div>
+  <div class="form-inputs" style="margin: 50px; margin-top: 0;">
+    <%= f.input :blocked %>
+    <%= f.input :spares %>
+    <%= f.submit %>
+  </div>
+
+<% end %>

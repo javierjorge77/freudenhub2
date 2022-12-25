@@ -7,15 +7,16 @@ class CreateTools < ActiveRecord::Migration[7.0]
       t.string :plant
       t.string :bu
       t.string :technology
-      t.integer :volume
       t.string :customer
+      t.integer :volume
       t.integer :max
       t.integer :damaged
       t.integer :blocked
       t.integer :spares
       t.integer :active
       t.string :segment
-      t.string :available
+      t.float :available
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
