@@ -1,5 +1,66 @@
 <h1>Welcome <%= current_user.name %></h1>
 
 <h2>
-This is the summary of tools availability per Site:
+Summary of tools availability % per Site:
 </h2>
+
+<div class="cards">
+
+
+<div class="card-trip">
+  <img src="https://res.cloudinary.com/dp693fkkc/image/upload/v1671996576/Freudenhub/Cuautla_ed6p62.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Cuautla</h2>
+      <p>LV: <%= @SegmentsCuautla[2] %> % </p>
+      <p>MV: <%= @SegmentsCuautla[1] %> % </p>
+      <p>HV: <%= @SegmentsCuautla[0] %> % </p>
+    </div>
+    <h2 class="card-trip-pricing">General: <%= @AvgCuautla%> %</h2>
+    <img src="https://res.cloudinary.com/dp693fkkc/image/upload/v1671998090/Freudenhub/mexico_qk1kzc.png" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+<div class="card-trip">
+  <img src="https://res.cloudinary.com/dp693fkkc/image/upload/v1671998420/Freudenhub/Spain_gwpc5v.webp" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Spain</h2>
+      <p>LV: <%= @SegmentsSpain[2] %> % </p>
+      <p>MV: <%= @SegmentsSpain[1] %> % </p>
+      <p>HV: <%= @SegmentsSpain[0] %> % </p>
+    </div>
+    <h2 class="card-trip-pricing">General: <%= @AvgSpain %> %</h2>
+    <img src="https://res.cloudinary.com/dp693fkkc/image/upload/v1671998534/Freudenhub/Spain_sgdkpp.png" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+<div class="card-trip">
+  <img src="https://res.cloudinary.com/dp693fkkc/image/upload/v1671999263/Freudenhub/England_ja7yyb.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>UK</h2>
+      <p>LV: <%= @SegmentsUK[2] %> % </p>
+      <p>MV: <%= @SegmentsUK[1] %> % </p>
+      <p>HV: <%= @SegmentsUK[0] %> % </p>
+    </div>
+    <h2 class="card-trip-pricing">General: <%= @AvgUK %> %</h2>
+    <img src="https://res.cloudinary.com/dp693fkkc/image/upload/v1671998570/Freudenhub/Uk_yj2vc9.png" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+<div class="card-trip">
+  <img src="https://res.cloudinary.com/dp693fkkc/image/upload/v1671999011/Freudenhub/Chenai_egyvlx.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>India</h2>
+      <p>LV: <%= @SegmentsIndia[2] %> % </p>
+      <p>MV: <%= @SegmentsIndia[1] %> % </p>
+      <p>HV: <%= @SegmentsIndia[0] %> % </p>
+    </div>
+    <h2 class="card-trip-pricing">General: <%= @AvgIndia %> %</h2>
+    <img src="https://res.cloudinary.com/dp693fkkc/image/upload/v1671998573/Freudenhub/India_d56odb.webp" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+</div>

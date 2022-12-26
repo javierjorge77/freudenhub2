@@ -1,49 +1,58 @@
 <h1>Database </h1>
 
+<%= simple_form_for :search, url: "/", method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+<% end %>
 
-<table>
-  <tr>
-    <th><%= link_to "user", :sort => "user"%> </th>
-    <th><%= link_to "alias", :sort => "alias"%> </th>
-    <th><%= link_to "sap", :sort => "sap"%> </th>
-    <th><%= link_to "layout", :sort => "layout"%> </th>
-    <th><%= link_to "plant", :sort => "plant"%> </th>
-    <th><%= link_to "bu", :sort => "bu"%> </th>
-    <th><%= link_to "technology", :sort => "technology"%> </th>
-    <th><%= link_to "volume", :sort => "volume"%> </th>
-    <th><%= link_to "customer", :sort => "customer"%> </th>
-    <th><%= link_to "max", :sort => "max"%> </th>
-    <th><%= link_to "damaged", :sort => "damaged"%> </th>
-    <th><%= link_to "blocked", :sort => "blocked"%> </th>
-    <th><%= link_to "active", :sort => "active"%> </th>
-    <th><%= link_to "spares", :sort => "spares"%> </th>
-    <th><%= link_to "segment", :sort => "segment"%> </th>
-    <th><%= link_to "available", :sort => "available"%> </th>
+<div class="container mt-5">
 
-  </tr>
+  <table>
+    <tr>
+      <th><%= link_to "user", :sort => "user"%> </th>
+      <th><%= link_to "alias", :sort => "alias"%> </th>
+      <th><%= link_to "sap", :sort => "sap"%> </th>
+      <th><%= link_to "layout", :sort => "layout"%> </th>
+      <th><%= link_to "plant", :sort => "plant"%> </th>
+      <th><%= link_to "bu", :sort => "bu"%> </th>
+      <th><%= link_to "technology", :sort => "technology"%> </th>
+      <th><%= link_to "volume", :sort => "volume"%> </th>
+      <th><%= link_to "customer", :sort => "customer"%> </th>
+      <th><%= link_to "max", :sort => "max"%> </th>
+      <th><%= link_to "damaged", :sort => "damaged"%> </th>
+      <th><%= link_to "blocked", :sort => "blocked"%> </th>
+      <th><%= link_to "active", :sort => "active"%> </th>
+      <th><%= link_to "spares", :sort => "spares"%> </th>
+      <th><%= link_to "segment", :sort => "segment"%> </th>
+      <th><%= link_to "available", :sort => "available"%> </th>
 
-<% @tools.each do |tool| %>
-  <tr>
-    <td>  <%= tool.user.name%></td>
-    <td>  <%= tool.alias%></td>
-    <td>  <%=tool.sap %></td>
-    <td>  <%=tool.layout %></td>
-    <td>  <%=tool.plant %></td>
-    <td>  <%=tool.bu %></td>
-    <td>  <%=tool.technology %></td>
-    <td>  <%=tool.volume %></td>
-    <td>  <%=tool.customer %></td>
-    <td>  <%=tool.max %></td>
-    <td>  <%=tool.damaged %></td>
-    <td>  <%=tool.blocked %></td>
-    <td>  <%=tool.active %></td>
-    <td>  <%=tool.spares %></td>
-    <td>  <%=tool.segment %></td>
-    <td>  <%=tool.available %></td>
+    </tr>
 
+  <% @tools.each do |tool| %>
+    <tr>
+      <td>  <%= tool.user.name%></td>
+      <td>  <%= tool.alias%></td>
+      <td>  <%=tool.sap %></td>
+      <td>  <%=tool.layout %></td>
+      <td>  <%=tool.plant %></td>
+      <td>  <%=tool.bu %></td>
+      <td>  <%=tool.technology %></td>
+      <td>  <%=tool.volume %></td>
+      <td>  <%=tool.customer %></td>
+      <td>  <%=tool.max %></td>
+      <td>  <%=tool.damaged %></td>
+      <td>  <%=tool.blocked %></td>
+      <td>  <%=tool.active %></td>
+      <td>  <%=tool.spares %></td>
+      <td>  <%=tool.segment %></td>
+      <td>  <%=tool.available %></td>
 
+    </tr>
+    <% end %>
+    </table>
 
-
-  </tr>
-  <% end %>
-  </table>
+</div>

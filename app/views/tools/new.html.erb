@@ -1,25 +1,33 @@
 <h1>New Tool</h1>
 
-<div class="flex-container">
-  <div class="form-inputs" style="margin: 50px; margin-top: 0;">
-    <%= simple_form_for(@tool) do |f| %>
-    <%= f.input :alias %>
-    <%= f.input :sap %>
-    <%= f.input :layout %>
-    <%= f.input :plant, collection: [ "Cuautla","UK", "Spain", "India"]%>
-    <%= f.input :bu %>
-  </div>
-  <div class="form-inputs" style="margin: 50px; margin-top: 0;">
-    <%= f.input :technology %>
-    <%= f.input :customer %>
-    <%= f.input :volume %>
-    <%= f.input :max %>
-    <%= f.input :damaged %>
-  </div>
-  <div class="form-inputs" style="margin: 50px; margin-top: 0;">
-    <%= f.input :blocked %>
-    <%= f.input :spares %>
-    <%= f.submit %>
-  </div>
+    <%= simple_form_for( @tool, data: {turbo: false}) do |f| %>
+      <%= f.error_notification %>
+
+
+    <div class="container">
+    <div class="flex-container">
+
+    <div class="form-inputs" style="margin: 50px; margin-top: 0;">
+      <%= f.error_notification %>
+      <%= f.input :alias, required: true %>
+      <%= f.input :sap , required: true %>
+      <%= f.input :layout, required: true %>
+      <%= f.input :plant, collection: [ "Cuautla","UK", "Spain", "India"], required: true %>
+      <%= f.input :bu, required: true %>
+      <%= f.input :technology, required: true %>
+    </div>
+
+    <div class="form-inputs" style="margin: 50px; margin-top: 0;">
+      <%= f.input :customer, required: true %>
+      <%= f.input :volume, required: true%>
+      <%= f.input :max , required: true %>
+      <%= f.input :damaged, required: true %>
+      <%= f.input :blocked, required: true %>
+      <%= f.input :spares, required: true %>
+
+      <%= f.submit %>
+
+    </div>
+</div>
 
 <% end %>
