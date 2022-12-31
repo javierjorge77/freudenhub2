@@ -21,13 +21,15 @@
                 collection: ["Operator", "Tooling", "Engineering","Production", "Quality", "SCM", "Marketing", "Growtth", "Finance","Management"],
                 required: true %>
 
-    <%= f.input :position,
-                required: true,
-                hint: "Ej. Ing. de Procesos, Operador, etc"%>
 
     </div>
 
     <div class="form-inputs" style="margin: 50px; margin-top: 0;">
+
+    <%= f.input :position,
+                required: true,
+                hint: "Ej. Ing. de Procesos, Operador, etc"%>
+
     <%= f.input :email,
                 required: true,
                 autofocus: true,

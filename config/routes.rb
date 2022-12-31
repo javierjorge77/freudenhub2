@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :tools, only: [:create,:edit, :index, :destroy]
+  resources :tools
 
 end

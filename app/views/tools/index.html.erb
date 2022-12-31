@@ -35,8 +35,8 @@
   <% @tools.each do |tool| %>
     <tr>
       <td>  <%= tool.user.name%></td>
-      <td>  <%= tool.alias%></td>
-      <td>  <%=tool.sap %></td>
+      <td>  <%= link_to tool.alias, tool_path(tool) %></td>
+      <td>  <%= link_to tool.sap, tool_path(tool) %></td>
       <td>  <%=tool.layout %></td>
       <td>  <%=tool.plant %></td>
       <td>  <%=tool.bu %></td>
@@ -49,7 +49,11 @@
       <td>  <%=tool.active %></td>
       <td>  <%=tool.spares %></td>
       <td>  <%=tool.segment %></td>
-      <td>  <%=tool.available %></td>
+
+
+      <td class="<%=andon(tool.available)%>">
+      <%= tool.available.round(2)*100 %> %
+      </td>
 
     </tr>
     <% end %>

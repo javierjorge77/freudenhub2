@@ -8,6 +8,9 @@
 user1= User.new(name:"J. Jorge", lastname: "Perez Ontiveros", plant:"Cuautla", department: "Operations", position:"PP Manager", email: "javierjorge77@gmail.com", password: "123456", admin: true)
 user1.save!
 
+user2= User.new(name:"Jorge", lastname: "Perez Ontiveros", plant:"Cuautla", department: "Operations", position:"PP Manager", email: "javo_7_7@hotmail.com", password: "123456", admin: false )
+user2.save!
+
 tool1= Tool.new(user: user1, alias:"hur5415-test", sap:"71500288", layout:"shorturl.at/chknx", plant:"Cuautla", bu:"damper", technology: "panstone", customer:"Tenneco", volume: 500000, max: 42, damaged: 1, blocked: 1, active: 40, spares: 0, segment: "MV",  available: 0.95)
 tool1.save!
 

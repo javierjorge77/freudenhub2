@@ -1,0 +1,36 @@
+<h1> Tool: </h1>
+
+      <ul>
+        <li> <strong> Alias:</strong> <%=  @tool.alias %> </li>
+        <li><strong>SAP #:  </strong><%=  @tool.sap %> </li>
+        <li> <strong> Layout: </strong> <%= @tool.layout %></li>
+        <li> <strong> Plant: </strong> <%= @tool.plant %></li>
+        <li> <strong> Business Unit: </strong><%= @tool.bu %></li>
+        <li> <strong>technology:</strong>  <%= @tool.technology %></li>
+        <li> <strong>Volume:</strong> <%= @tool.volume %></li>
+        <li> <strong>Customer:</strong> <%= @tool.customer %></li>
+        <li> <strong>Maximum # of Cavities: </strong> <%= @tool.max %></li>
+        <li><strong> Damaged Cavities:</strong> <%= @tool.damaged %></li>
+        <li> <strong>Blocked Cavities: </strong> <%= @tool.blocked %></li>
+        <li> <strong> Active Cavities: </strong><%= @tool.active %></li>
+        <li> <strong>Spare Cavities:</strong><%= @tool.spares %></li>
+        <li> <strong>Volume Segment: </strong> <%= @tool.segment %></li>
+        <li> <strong> Availability %: </strong> <span class="<%=andon(@tool.available)%>"> <%= @tool.available*100 %> % </span></li>
+      </ul>
+
+
+
+
+<% if current_user.admin? %>
+  <h1> Approved Admin Privileges: </h1>
+  <div class="btn btn-ghost"> <%= link_to "Edit",  edit_tool_path(@tool) %></div>
+
+  <div class="btn btn-ghost">
+  <%= link_to "Delete",
+    tool_path(@tool),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+
+<% else %>
+  <h3> Read Only Privileges </h3>
+<% end %>

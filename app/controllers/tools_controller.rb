@@ -14,7 +14,6 @@ class ToolsController < ApplicationController
       else
         render :new
       end
-
   end
 
   def index
@@ -22,6 +21,31 @@ class ToolsController < ApplicationController
     @tools = Tool.order(params[:sort])
   end
 
+  def show
+    @tool = Tool.find(params[:id])
+  end
+
+
+  def edit
+    @tool = Tool.find(params[:id])
+
+  end
+
+  def update
+    @tool = Tool.find(params[:id])
+    @tool.update(tool_params) #strong params
+    fill_blanks
+    @tool.user = current_user
+    @tool.save
+    redirect_to tool_path(@tool)
+  end
+
+  def destroy
+    @tool = Tool.find(params[:id])
+    @tool.destroy
+    # No need for app/views/tools/destroy.html.erb
+    redirect_to tools_path, status: :see_other
+  end
 
 
 private
